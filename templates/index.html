@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Black">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        body {
+            font-family: "Roboto Black", sans-serif;
+            background-color: #ffdf3c;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url("C:\Users\DELL\Downloads\mike-meyers-v8XaVfyo41Q-unsplash.jpg");
+            background-repeat: repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+
+        /* Navigation bar */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        #navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px;
+        }
+        #navbar a:hover {
+            color: #ffdf3c;
+        }
+
+        #navbar a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #ffdf3c;
+            transition: width 0.3s;
+        }
+
+        #navbar a:hover::after {
+            width: 100%;
+            transition: width 0.3s;
+        }
+
+
+        /* Centered title styles */
+        .centered-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-size: 4rem;
+        }
+
+         /* Services styles */
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            flex: 0 1 calc(100% - 2rem); /* Change this line to make the services take up the full width of the page */
+            margin: 1rem;
+            padding: 1rem;
+            background-color: #ffdf3c;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        
+        /* Swiper container */
+        .swiper-container {
+            width: 100%;
+            height: calc(100vh - 60px); /* Adjust height based on the navigation bar height */
+        }
+
+        /* Swiper slide content */
+        .slide-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .slide-content h1 {
+            font-size: 4rem;
+        }
+
+        .slide-content h2 {
+            font-size: 2.5rem;
+        }
+
+        .slide-content p {
+            font-size: 1.25rem;
+        }
+        /* About Us styles */
+        #about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        #about h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #about p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        /* Prevent horizontal scrolling */
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        /* Contact Us styles */
+        #contact {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #ffdf3c;
+            padding: 2rem;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 2rem;
+        }
+
+        .contact-form,
+        .office-directions {
+            flex: 1;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label,
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #555;
+        }
+    </style>
+    <title>DeepCreate.AI</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <a href="#about">About Us</a>
+            <a href="#services">Our Services</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- First slide -->
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <h1>DeepCreate.ai</h1>
+                    <p>Helping game developers create better experiences through Artificial Intelligence</p>
+                </div>
+            </div>
+            <!-- Second slide -->
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <h2>Level Generation</h2>
+                    <p>We provide AI-driven level generation services for a more immersive and dynamic gaming experience.</p>
+                </div>
+            </div>
+            <!-- Third slide -->
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <h2>Quality Assurance Bots</h2>
+                    <p>Our quality assurance bots help identify and fix issues in your game, ensuring a smooth and polished experience for players.</p>
+                </div>
+            </div>
+            <!-- Fourth slide -->
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <h2>Machine Learning for Games</h2>
+                    <p>Leverage the power of machine learning to create adaptive gameplay, predictive analytics, and more for your game.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>    
+    <main>
+        <section id="about" class="centered-title">
+            <h1>About Us</h1>
+            <p>At DeepCreate.ai, we leverage the power of cutting-edge Artificial Intelligence and Large Language Models (LLMs) to create advanced level generation pipelines and other services for the gaming industry. Our solutions enable game developers to streamline their development process, save time, and create more engaging and immersive gaming experiences. By combining our expertise in AI and machine learning with a deep understanding of the unique challenges faced by indie game developers, we are committed to providing innovative solutions that cater to their specific needs and help them stay ahead of the competition.</p>
+        </section>
+        <section id="services" class="services-container">
+            <div class="service">
+                <h2>Level Generation</h2>
+                <p>We provide AI-driven level generation services for a more immersive and dynamic gaming experience.</p>
+            </div>
+            <div class="service">
+                <h2>Quality Assurance Bots</h2>
+                <p>Our quality assurance bots help identify and fix issues in your game, ensuring a smooth and polished experience for players.</p>
+            </div>
+            <div class="service">
+                <h2>Machine Learning for Games</h2>
+                <p>Leverage the power of machine learning to create adaptive gameplay, predictive analytics, and more for your game.</p>
+            </div>
+        </section>
+        <section id="contact">
+            <!-- Contact Us content -->
+        </section>
+        <section id="contact">
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h2>Contact Us</h2>
+                    <form action="/submit" method="post">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="office-directions">
+                    <h2>Office Directions</h2>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.8522341474854!2d27.99288311555893!3d-26.266458772887546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9508e9d789af33%3A0xceecccf3fcab06a5!2s12%20Ethna%20St%2C%20Ridgeway%2C%20Johannesburg%20South%2C%202091!5e0!3m2!1sen!2sza!4v1679118756900!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>        
+    </main>
+    <footer>
+        <!-- Footer content -->
+    </footer>
+    <script src="/static/js/main.js"></script>
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            loop: true,
+    
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>    
+</body>
+</html>
