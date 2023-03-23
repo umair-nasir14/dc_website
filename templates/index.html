@@ -59,6 +59,14 @@
             transition: width 0.3s;
         }
 
+        /* Slider, About Us, Services, and Contact Us sections */
+        .full-height {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
         /* Centered title styles */
         .centered-title {
@@ -72,22 +80,40 @@
          /* Services styles */
         .services-container {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
+        /* Services */
+        .services-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .services-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+
         .service {
-            flex: 0 1 calc(100% - 2rem); /* Change this line to make the services take up the full width of the page */
+            flex: 0 1 calc(33.333% - 2rem);
             margin: 1rem;
             padding: 1rem;
-            background-color: #ffdf3c;
+            background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
-        
-        /* Swiper container */
-        .swiper-container {
-            width: 100%;
-            height: calc(100vh - 60px); /* Adjust height based on the navigation bar height */
+
+        /* Our Services heading */
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
         /* Swiper slide content */
@@ -189,6 +215,24 @@
         .contact-form button:hover {
             background-color: #555;
         }
+        /* Disclaimer */
+        .disclaimer {
+            text-align: center;
+            color: #fff;
+            font-size: 0.8rem;
+            padding-bottom: 0.5rem;
+        }
+            /* Footer and Copyright */
+        footer {
+            background-color: #333;
+            padding: 1rem 0;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #fff;
+            font-size: 0.9rem;
+        }
     </style>
     <title>DeepCreate.AI</title>
 </head>
@@ -200,63 +244,69 @@
             <a href="#contact">Contact Us</a>
         </nav>
     </header>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <!-- First slide -->
-            <div class="swiper-slide">
-                <div class="slide-content">
-                    <h1>DeepCreate.ai</h1>
-                    <p>Helping game developers create better experiences through Artificial Intelligence</p>
+    <section id="slider" class="full-height">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- First slide -->
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <h1>DeepCreate.ai</h1>
+                        <p>Helping game developers create better experiences through Artificial Intelligence</p>
+                    </div>
+                </div>
+                <!-- Second slide -->
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <h2>Level Generation</h2>
+                        <p>We provide AI-driven level generation services for a more immersive and dynamic gaming experience.</p>
+                    </div>
+                </div>
+                <!-- Third slide -->
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <h2>Quality Assurance Bots</h2>
+                        <p>Our quality assurance bots help identify and fix issues in your game, ensuring a smooth and polished experience for players.</p>
+                    </div>
+                </div>
+                <!-- Fourth slide -->
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <h2>Machine Learning for Games</h2>
+                        <p>Leverage the power of machine learning to create adaptive gameplay, predictive analytics, and more for your game.</p>
+                    </div>
                 </div>
             </div>
-            <!-- Second slide -->
-            <div class="swiper-slide">
-                <div class="slide-content">
-                    <h2>Level Generation</h2>
-                    <p>We provide AI-driven level generation services for a more immersive and dynamic gaming experience.</p>
-                </div>
-            </div>
-            <!-- Third slide -->
-            <div class="swiper-slide">
-                <div class="slide-content">
-                    <h2>Quality Assurance Bots</h2>
-                    <p>Our quality assurance bots help identify and fix issues in your game, ensuring a smooth and polished experience for players.</p>
-                </div>
-            </div>
-            <!-- Fourth slide -->
-            <div class="swiper-slide">
-                <div class="slide-content">
-                    <h2>Machine Learning for Games</h2>
-                    <p>Leverage the power of machine learning to create adaptive gameplay, predictive analytics, and more for your game.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-    </div>    
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>    
+    </section>
     <main>
-        <section id="about" class="centered-title">
+        <!-- About Us -->
+        <section id="about" class="full-height">
             <h1>About Us</h1>
             <p>At DeepCreate.ai, we leverage the power of cutting-edge Artificial Intelligence and Large Language Models (LLMs) to create advanced level generation pipelines and other services for the gaming industry. Our solutions enable game developers to streamline their development process, save time, and create more engaging and immersive gaming experiences. By combining our expertise in AI and machine learning with a deep understanding of the unique challenges faced by indie game developers, we are committed to providing innovative solutions that cater to their specific needs and help them stay ahead of the competition.</p>
         </section>
+        <!-- Services -->
         <section id="services" class="services-container">
-            <div class="service">
-                <h2>Level Generation</h2>
-                <p>We provide AI-driven level generation services for a more immersive and dynamic gaming experience.</p>
-            </div>
-            <div class="service">
-                <h2>Quality Assurance Bots</h2>
-                <p>Our quality assurance bots help identify and fix issues in your game, ensuring a smooth and polished experience for players.</p>
-            </div>
-            <div class="service">
-                <h2>Machine Learning for Games</h2>
-                <p>Leverage the power of machine learning to create adaptive gameplay, predictive analytics, and more for your game.</p>
+            <h2>Our Services</h2>
+            <div class="services-row">
+                <div class="service">
+                    <h3>Level Generation</h3>
+                    <p>We provide AI-driven level generation services for a more immersive and dynamic gaming experience.</p>
+                </div>
+                <div class="service">
+                    <h3>Quality Assurance Bots</h3>
+                    <p>Our quality assurance bots help identify and fix issues in your game, ensuring a smooth and polished experience for players.</p>
+                </div>
+                <div class="service">
+                    <h3>Machine Learning for Games</h3>
+                    <p>Leverage the power of machine learning to create adaptive gameplay, predictive analytics, and more for your game.</p>
+                </div>
             </div>
         </section>
-        <section id="contact">
-            <!-- Contact Us content -->
-        </section>
-        <section id="contact">
+
+
+        <section id="contact" class="full-height">
             <div class="contact-container">
                 <div class="contact-form">
                     <h2>Contact Us</h2>
@@ -281,7 +331,12 @@
         </section>        
     </main>
     <footer>
-        <!-- Footer content -->
+        <div class="disclaimer">
+            Disclaimer: This website is built using GPT-4 in ChatGPT by OpenAI.
+        </div>
+        <div class="copyright">
+            &copy; 2023 DeepCreate.AI. All rights reserved.
+        </div>
     </footer>
     <script src="/static/js/main.js"></script>
     <script>
