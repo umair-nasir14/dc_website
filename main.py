@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request
 from flask_pymongo import PyMongo
+import os
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://485b4b6c-893b-6:94fd89ef-1884-a@mongodb-capsule-ptzsqp.codecapsules.co.za:27017/app?authSource=admin&directConnection=true&ssl=true"#"mongodb://localhost:27017/deepcreate"  # Use your MongoDB connection string here
+app.config["MONGO_URI"] = os.environ["DATABASE_URL"] #"mongodb://localhost:27017/deepcreate"  # Use your MongoDB connection string here
 mongo = PyMongo(app)
 
 @app.route('/')
