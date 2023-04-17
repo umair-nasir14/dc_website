@@ -1,363 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Black">
-    <link rel="stylesheet" href="/static/css/styles.css">
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <style>
-        body {
-            font-family: "Roboto Black", sans-serif;
-            background-color: #ffdf3c;
-            margin: 0;
-            padding: 0;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto+Black"
+    /> -->
+    <link rel="stylesheet" href="./../static/css/style.css" />
 
-        body {
-            background-image: url("C:\Users\DELL\Downloads\mike-meyers-v8XaVfyo41Q-unsplash.jpg");
-            background-repeat: repeat;
-            background-size: cover;
-            background-attachment: fixed;
-        }
-
-
-        /* Navigation bar */
-        #navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-evenly;
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-        #navbar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 15px;
-        }
-        #navbar a:hover {
-            color: #ffdf3c;
-        }
-
-        #navbar a::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: #ffdf3c;
-            transition: width 0.3s;
-        }
-
-        #navbar a:hover::after {
-            width: 100%;
-            transition: width 0.3s;
-        }
-
-        /* Slider, About Us, Services, and Contact Us sections */
-        .full-height {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Centered title styles */
-        .centered-title {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            font-size: 4rem;
-        }
-
-         /* Services styles */
-        .services-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        /* Services */
-        .services-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .services-row {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            width: 100%;
-            max-width: 1200px;
-        }
-
-
-        .service {
-            flex: 0 1 calc(33.333% - 2rem);
-            margin: 1rem;
-            padding: 1rem;
-            background-color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        /* Our Services heading */
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Swiper slide content */
-        .slide-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .slide-content h1 {
-            font-size: 4rem;
-        }
-
-        .slide-content h2 {
-            font-size: 2.5rem;
-        }
-
-        .slide-content p {
-            font-size: 1.25rem;
-        }
-        /* About Us styles */
-        #about {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        #about h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        #about p {
-            font-size: 1.25rem;
-            line-height: 1.6;
-            text-align: center;
-            max-width: 800px;
-        }
-
-        /* Prevent horizontal scrolling */
-        html {
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-        /* Contact Us styles */
-        #contact {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background-color: #ffdf3c;
-            padding: 2rem;
-        }
-
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 2rem;
-        }
-
-        .contact-form,
-        .office-directions {
-            flex: 1;
-        }
-
-        .contact-form form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-form label,
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form button {
-            width: 100%;
-            margin-bottom: 1rem;
-        }
-
-        .contact-form button {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .contact-form button:hover {
-            background-color: #555;
-        }
-        /* Disclaimer */
-        .disclaimer {
-            text-align: center;
-            color: #fff;
-            font-size: 0.8rem;
-            padding-bottom: 0.5rem;
-        }
-            /* Footer and Copyright */
-        footer {
-            background-color: #333;
-            padding: 1rem 0;
-        }
-
-        .copyright {
-            text-align: center;
-            color: #fff;
-            font-size: 0.9rem;
-        }
-    </style>
+    <link rel="stylesheet" href="./../static/css/swiper-bundle.min.css" />    
     <title>DeepCreate.AI</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav id="navbar">
-            <a href="#about">About Us</a>
-            <a href="#services">Our Services</a>
-            <a href="#contact">Contact Us</a>
-        </nav>
+      <nav id="navbar">
+        <a href="#about">About Us</a>
+        <a href="#services">Our Services</a>
+        <a href="#Research">Research</a>
+        <a href="#contact">Contact Us</a>
+        
+      </nav>
     </header>
-    <section id="slider" class="full-height">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <!-- First slide -->
-                <div class="swiper-slide">
-                    <div class="slide-content">
-                        <h1>DeepCreate.ai</h1>
-                        <p>Helping game developers create better experiences through Artificial Intelligence</p>
-                    </div>
-                </div>
-                <!-- Second slide -->
-                <div class="swiper-slide">
-                    <div class="slide-content">
-                        <h2>Level Generation</h2>
-                        <p>We provide AI-driven level generation services for a more immersive and dynamic gaming experience.</p>
-                    </div>
-                </div>
-                <!-- Third slide -->
-                <div class="swiper-slide">
-                    <div class="slide-content">
-                        <h2>Quality Assurance Bots</h2>
-                        <p>Our quality assurance bots help identify and fix issues in your game, ensuring a smooth and polished experience for players.</p>
-                    </div>
-                </div>
-                <!-- Fourth slide -->
-                <div class="swiper-slide">
-                    <div class="slide-content">
-                        <h2>Machine Learning for Games</h2>
-                        <p>Leverage the power of machine learning to create adaptive gameplay, predictive analytics, and more for your game.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
-        </div>    
-    </section>
-    <main>
-        <!-- About Us -->
-        <section id="about" class="full-height">
-            <h1>About Us</h1>
-            <p>At DeepCreate.ai, we leverage the power of cutting-edge Artificial Intelligence and Large Language Models (LLMs) to create advanced level generation pipelines and other services for the gaming industry. Our solutions enable game developers to streamline their development process, save time, and create more engaging and immersive gaming experiences. By combining our expertise in AI and machine learning with a deep understanding of the unique challenges faced by indie game developers, we are committed to providing innovative solutions that cater to their specific needs and help them stay ahead of the competition.</p>
-        </section>
-        <!-- Services -->
-        <section id="services" class="services-container">
-            <h2>Our Services</h2>
-            <div class="services-row">
-                <div class="service">
-                    <h3>Level Generation</h3>
-                    <p>We provide AI-driven level generation services for a more immersive and dynamic gaming experience.</p>
-                </div>
-                <div class="service">
-                    <h3>Quality Assurance Bots</h3>
-                    <p>Our quality assurance bots help identify and fix issues in your game, ensuring a smooth and polished experience for players.</p>
-                </div>
-                <div class="service">
-                    <h3>Machine Learning for Games</h3>
-                    <p>Leverage the power of machine learning to create adaptive gameplay, predictive analytics, and more for your game.</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- Contact Us content -->
-        <section id="contact" class="full-height">
-            <div class="contact-container">
-                <div class="contact-form">
-                    <h2>Contact Us</h2>
-                    <form action="{{ url_for('submit_contact') }}" method="post">
-                        <div>
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div>
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div>
-                            <label for="message">Message:</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <div>
-                            <button type="submit">Submit</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="office-directions">
-                    <h2>Office Directions</h2>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.8522341474854!2d27.99288311555893!3d-26.266458772887546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9508e9d789af33%3A0xceecccf3fcab06a5!2s12%20Ethna%20St%2C%20Ridgeway%2C%20Johannesburg%20South%2C%202091!5e0!3m2!1sen!2sza!4v1679118756900!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+    <div id="main">
+      <div id="main-slides">
+        <div id="overflow">
+          <div class="main-inner">
+            <div class="main-slide main-slide_1">
+              <div class="slide-content1 main-heading">
+                <h2>DeepCreate.ai</h2>
+                <p> 
+                  Helping game developers create better experiences through
+                  Artificial Intelligence
+                </p>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <!-- About Us -->
+      <section id="about">
+        <h1>About Us</h1>
+        <p>
+          At DeepCreate.ai, we leverage the power of cutting-edge Artificial
+          Intelligence and Large Language Models (LLMs) to create advanced level
+          generation pipelines and other services for the gaming industry. Our
+          solutions enable game developers to streamline their development
+          process, save time, and create more engaging and immersive gaming
+          experiences. By combining our expertise in AI and machine learning
+          with a deep understanding of the unique challenges faced by indie game
+          developers, we are committed to providing innovative solutions that
+          cater to their specific needs and help them stay ahead of the
+          competition.
+        </p>
+      </section>
+ 
+      <section id="services" class="services-container">
+        <h1>Our Services</h1>
+        <div class="services-row">
+            <div class="service">
+              <div class="service-img">
+              <!-- <img src="./images.jfif" width="" alt="loading" /> -->
+            </div>
+            <div style="height: 30%;">
+                <h3>Level Generation</h3>
+              </div>
+              <div>
+                <p>We provide AI-driven level generation services for a more immersive and dynamic gaming experience.</p>
+              </div>
+              </div>
+            <div class="service">
+              <div class="service-img">
+                <!-- <img src="./images.jfif" width="" alt="loading" /> -->
+              </div>
+              <div style="height: 30%;">
+                <h3>Enhanced Non-Player Characters</h3>
+              </div>
+              <div>
+                <p>Experience unparalleled realism with our Enhanced Non-Player Characters, seamlessly blending unique and controllable elements to craft your ultimate, personalized story adventure</p>
+            </div>
+          </div>
+            <div class="service">
+              <div class="service-img">
+                <!-- <img src="./images.jfif" w idth="" alt="loading" /> -->
+              </div>
+              <div style="height: 30%;">
+                <h3>Machine Learning for Games</h3>
+              </div>
+              <div>
+
+                <p>Leverage the power of machine learning to create adaptive gameplay, predictive analytics, and more for your game.</p>
+            </div>
+          </div>
+        </div>
+    </section>
+      <div id="Research">
+      <h1>Our Research</h1>
+      <div class="slide-container swiper">
+        <div class="slide-content">
+            <div class="card-wrapper swiper-wrapper">
+              <!-- <div class="card-wrapper swiper-wrapper" style="transform: translate3d(-1025px, 0px, 0px)" ></div>   -->
+              <div class="card swiper-slide">
+                   
+
+                    <div class="card-content">
+                        <h2 class="name">Level Generation Through Large Language Models</h2>
+                        <div class="link">
+                         <a href="https://arxiv.org/abs/2302.05817" target="_blank">Click Here</a>
+                      </div>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    
+
+                    <div class="card-content">
+                        <h2 class="name">Augmentative Topology Agents For Open-Ended Learning</h2>
+                        <div class="link">
+                       <a class='research-link' href="https://arxiv.org/abs/2210.11442" target="_blank">Click Here</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
         
 
+                    <div class="card-content">
+                        <h2 class="name">Hierarchically Composing Level Generators for the Creation of Complex Structures</h2>
+                        <div class="link">
+                        <a class='research-link' href="https://arxiv.org/abs/2302.01561" target="_blank">Click Here</a>
+                      </div>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    
+
+                    <div class="card-content">
+                        <h2 class="name">A Few Thousand Translations Go a Long Way! Leveraging Pre-trained Models for African News Translation</h2>
+                        <div class="link">
+                        <a class='research-link' href="https://arxiv.org/abs/2205.02022" target="_blank">Click Here</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+        
+
+                    <div class="card-content">
+                        <h2 class="name">Geographical Distance Is The New Hyperparameter: A Case Study Of Finding The Optimal Pre-trained Language For English-isiZulu Machine Translation.</h2>
+                        <div class="link">
+                        <a class='research-link' href="https://arxiv.org/abs/2205.08621" target="_blank">Click Here</a>
+                        </div>
+
+                    </div>
+                
+                
+           
+            </div>
+        </div>
+
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
+        <div class="dots">
+
+          <div class="swiper-pagination" style="width: 200px;"></div>
+        </div>
+    </div>
+        
+    </div>
+    </div>
+      <!-- Contact Us content -->
+      <section id="contact">
+        <div class="contact-container">
+          <div class="office-directions">
+            <h2>Office Directions</h2>
+            <iframe
+              id="map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.8522341474854!2d27.99288311555893!3d-26.266458772887546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9508e9d789af33%3A0xceecccf3fcab06a5!2s12%20Ethna%20St%2C%20Ridgeway%2C%20Johannesburg%20South%2C%202091!5e0!3m2!1sen!2sza!4v1679118756900!5m2!1sen!2sza"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="contact-form">
+            <h2 style="text-align: center">Contact Us</h2>
+            <!-- <form action="{{ url_for('submit_contact') }}" method="post"> -->
+            <form method="post">
+              <div class="contact-fields">
+                <!-- <label for="name">Name:</label> -->
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  required
+                />
+                <input
+                  type="text"
+                  id="name"
+                  name="surname"
+                  placeholder="Surname"
+                  required
+                />
+              </div>
+              <div class="contact-fields">
+                <!-- <label for="email">Email:</label> -->
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                />
+                <input
+                  type="text"
+                  id="email"
+                  name="Subject"
+                  placeholder="Subject"
+                  required
+                />
+              </div>
+              <div>
+                <!-- <label for="message">Message:</label> -->
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Your Message..."
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              
+
+                <div class="modeldiv">
+                  <button type="submit" id="myBtn" >Submit</button>
+                  
+                  <!-- The Modal -->
+                  <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                      <span class="close">&times;</span>
+                      <p>Your Request is sended. We will contact you soon</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
-        <div class="disclaimer">
-            Disclaimer: This website is built using GPT-4 in ChatGPT by OpenAI.
-        </div>
-        <div class="copyright">
-            &copy; 2023 DeepCreate.AI. All rights reserved.
-        </div>
+      <div class="disclaimer">
+        Disclaimer: This website is built using GPT-4 in ChatGPT by OpenAI.
+      </div>
+      <div class="copyright">
+        &copy; 2023 DeepCreate.AI. All rights reserved.
+      </div>
     </footer>
-    <script src="/static/js/main.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./../static/js/swiper-bundle.min.js"></script>
+    <script src="./../static/js/main.js"></script>
     <script>
-        // Initialize Swiper
-        const swiper = new Swiper('.swiper-container', {
-            // Optional parameters
-            loop: true,
-    
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        });
-    </script>    
-</body>
+      //  function handleClick() {
+      //   // e.preventDefault();
+      //   alert("Your Message is recieved");
+      // }
+
+    </script>
+ 
+  </body>
 </html>
