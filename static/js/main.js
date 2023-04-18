@@ -5,7 +5,7 @@ function scrollToSection(event) {
 
   targetElement.scrollIntoView({
     behavior: "smooth",
-    block: "start",  
+    block: "start",
   });
 }
 
@@ -25,7 +25,6 @@ var span = document.getElementsByClassName("close")[0];
 btn.onclick = function () {
   modal.style.display = "block";
   // modal.style.backfaceVisibility="blur"
-  
 };
 
 // When the user clicks on <span> (x), close the modal
